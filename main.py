@@ -1,4 +1,5 @@
 import os
+from random import choice
 from dotenv import load_dotenv
 from flask_bootstrap import Bootstrap
 from flask_sqlalchemy import SQLAlchemy
@@ -18,6 +19,14 @@ class Base(DeclarativeBase):
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ["SQLALCHEMY_DATABASE_URI"]
 db = SQLAlchemy(model_class=Base)
+db.init_app(app)
+
+
+@app.route("/")
+def home():
+    return render_template('index.html')
+
+
 
 
 if __name__ == "__main__":

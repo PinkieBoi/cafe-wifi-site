@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% block styles %}
+    {{ bootstrap.load_css() }}
+    <meta charset="UTF-8">
+    <title>Cafe Search</title>
+</head>
+<body>
+    {% block content %}{% endblock %}
+    {{ bootstrap.load_js() }}
+</body>
+</html>
